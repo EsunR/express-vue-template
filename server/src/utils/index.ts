@@ -10,16 +10,16 @@ export function verifyRequestArgs(
   args: Record<string, any>,
   verifyKeys: (
     | string
-    | { key: string; type: "string" | "array"; required?: boolean }
+    | { key: string; type: 'string' | 'array'; required?: boolean }
   )[]
 ): VerifyResult {
   let result: VerifyResult = {
     result: true,
-    errMsg: "",
+    errMsg: '',
   };
 
   verifyKeys.some((verifyItem) => {
-    if (typeof verifyItem === "string") {
+    if (typeof verifyItem === 'string') {
       if (args[verifyItem] === undefined) {
         result = {
           result: false,
@@ -29,8 +29,8 @@ export function verifyRequestArgs(
       }
     } else {
       const { key, type, required = true } = verifyItem;
-      if (type === "string") {
-        if (typeof args[key] !== "string") {
+      if (type === 'string') {
+        if (typeof args[key] !== 'string') {
           result = {
             result: false,
             errMsg: `${verifyItem.key} 必须为字符串类型的值`,
@@ -44,7 +44,7 @@ export function verifyRequestArgs(
           };
           return true;
         }
-      } else if (type === "array") {
+      } else if (type === 'array') {
         if (!(args[key] instanceof Array)) {
           result = {
             result: false,

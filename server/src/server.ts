@@ -1,13 +1,13 @@
-import cors from "@koa/cors";
-import dbGenerator from "@server/db/db_generator";
-import errorHandler from "@server/middle/error_handler";
-import Koa from "koa";
-import KoaBody from "koa-body";
-import KoaLogger from "koa-logger";
-import Router from "koa-router";
-import KoaStatic from "koa-static";
-import { NODE_PORT } from "./config";
-import { STATIC_DIR_PATH } from "./config/paths";
+import cors from '@koa/cors';
+import dbGenerator from '@server/db/db_generator';
+import errorHandler from '@server/middle/error_handler';
+import Koa from 'koa';
+import KoaBody from 'koa-body';
+import KoaLogger from 'koa-logger';
+import Router from 'koa-router';
+import KoaStatic from 'koa-static';
+import { NODE_PORT } from './config';
+import { STATIC_DIR_PATH } from './config/paths';
 
 const app: Koa = new Koa();
 const router: Router = new Router();
@@ -38,10 +38,10 @@ app.use(
 );
 
 // Router
-import testRouter from "./routers/test";
-import userRouter from "./routers/user";
-router.use("/api", testRouter.routes());
-router.use("/api", userRouter.routes());
+import testRouter from './routers/test';
+import userRouter from './routers/user';
+router.use('/api', testRouter.routes());
+router.use('/api', userRouter.routes());
 
 app.use(router.routes()).use(router.allowedMethods());
 

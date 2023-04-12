@@ -3,12 +3,12 @@ import {
   POST_USER_CREATE_API,
   PickServerReq,
   PickServerRes,
-} from "@koa-vue-template/types/api";
-import userModel from "@server/model/User";
-import ResBody from "@server/struct/ResBody";
-import { verifyRequestArgs } from "@server/utils";
-import Router from "koa-router";
-import { hashPassword } from "./controller";
+} from '@koa-vue-template/types/api';
+import userModel from '@server/model/User';
+import ResBody from '@server/struct/ResBody';
+import { verifyRequestArgs } from '@server/utils';
+import Router from 'koa-router';
+import { hashPassword } from './controller';
 
 const userRouter = new Router();
 
@@ -21,14 +21,14 @@ userRouter.post(POST_USER_CREATE_API, async (ctx) => {
   >;
   // 校验参数
   const vResult = verifyRequestArgs(ctx.request.body, [
-    { key: "name", type: "string", required: true },
-    { key: "password", type: "string", required: true },
+    { key: 'name', type: 'string', required: true },
+    { key: 'password', type: 'string', required: true },
   ]);
   if (!vResult.result) {
     throw new Error(vResult.errMsg);
   }
 
-  if(await userModel.findOne({ where: { name } })) {
+  if (await userModel.findOne({ where: { name } })) {
     throw new Error('用户名已存在');
   }
 

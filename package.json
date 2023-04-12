@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "dev:client": "pnpm -C client dev",
     "dev:server": "pnpm -C server dev",
     "dev:server-force": "cross-env DB_FORCE=TRUE pnpm -C server dev",
@@ -36,6 +37,8 @@
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
     "prettier": "^2.5.1",
     "typescript": "^4.9.3"
   },
@@ -44,5 +47,9 @@
     "@koa-vue-template/server": "workspace:*",
     "@koa-vue-template/types": "workspace:*",
     "@koa-vue-template/utils": "workspace:*"
+  },
+  "lint-staged": {
+    "*.{js,vue,ts}": "eslint --cache --fix",
+    "*.--write": "prettier --write"
   }
 }

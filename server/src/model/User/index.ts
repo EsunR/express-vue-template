@@ -1,9 +1,9 @@
-import { UserInstance } from "@koa-vue-template/types/model";
-import db from "@server/db";
-import { DataTypes, Sequelize } from "sequelize";
+import { UserInstance } from '@koa-vue-template/types/model';
+import db from '@server/db';
+import { DataTypes, Sequelize } from 'sequelize';
 
 export function createUserModel(sequelize: Sequelize) {
-  const UserModel = sequelize.define<UserInstance>("User", {
+  const UserModel = sequelize.define<UserInstance>('User', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
