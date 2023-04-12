@@ -1,0 +1,10 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "../../server/public/database/koa-vue-template.sqlite"
+  },
+  "production": {
+    "dialect": "sqlite",
+    "storage": "./server/public/database/koa-vue-template.sqlite"
+  }
+}

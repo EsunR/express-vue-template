@@ -1,0 +1,17 @@
+.el-descriptions {
+  .el-descriptions__label {
+    &::after {
+      content: ":";
+    }
+  }
+  .el-descriptions__content {
+    .el-icon {
+      vertical-align: middle;
+      font-size: 1rem;
+    }
+
+    &:empty::after {
+      content: "-";
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@koa-vue-template/build",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp -f ./gulpfile.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/gulp": "^4.0.9",
+    "@types/gulp-json-editor": "^2.2.33"
+  },
+  "dependencies": {
+    "@rollup/plugin-alias": "^4.0.2",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-json": "^5.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "del": "^6.0.0",
+    "esbuild": "^0.15.12",
+    "fast-glob": "^3.2.12",
+    "gulp": "^4.0.2",
+    "gulp-json-editor": "^2.5.6",
+    "rollup": "^3.2.5",
+    "rollup-plugin-esbuild": "^4.10.1",
+    "ts-node": "^10.0.0"
+  }
+}

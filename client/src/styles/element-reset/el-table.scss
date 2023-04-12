@@ -1,0 +1,24 @@
+.el-table {
+  .cell:empty::before {
+    content: "-";
+  }
+  // 修复嵌套表格下，子表格滚动没有阴影的问题
+  &.is-scrolling-middle {
+    .el-table-fixed-column--left.is-last-column::before {
+      box-shadow: var(--el-table-fixed-left-column);
+    }
+    .el-table-fixed-column--right.is-first-column::before {
+      box-shadow: var(--el-table-fixed-right-column);
+    }
+  }
+  &.el-table.is-scrolling-left {
+    .el-table-fixed-column--right.is-first-column::before {
+      box-shadow: var(--el-table-fixed-right-column);
+    }
+  }
+  &.el-table.is-scrolling-right {
+    .el-table-fixed-column--left.is-last-column::before {
+      box-shadow: var(--el-table-fixed-left-column);
+    }
+  }
+}

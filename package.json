@@ -1,0 +1,48 @@
+{
+  "name": "koa-vue-template",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:client": "pnpm -C client dev",
+    "dev:server": "pnpm -C server dev",
+    "dev:server-force": "cross-env DB_FORCE=TRUE pnpm -C server dev",
+    "build:client": "pnpm -C client build",
+    "build": "pnpm -C build build",
+    "db:migrate:dev": "pnpm -C packages/db_migration migrate:dev",
+    "db:init:dev": "pnpm -C server db:init:dev",
+    "clean:node_modules": "find . -name \"node_modules\" -type d -exec rm -rf '{}' +"
+  },
+  "productScripts": {
+    "start": "cross-env NODE_ENV=production node ./server/src/server.js",
+    "db:init": "cross-env NODE_ENV=production node ./server/src/init_db.js",
+    "db:migrate": "cross-env NODE_ENV=production sequelize-cli db:migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zpangxie/koa-vue-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zpangxie/koa-vue-template/issues"
+  },
+  "homepage": "https://github.com/Zpangxie/koa-vue-template#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@koa-vue-template/client": "workspace:^0.0.0",
+    "@koa-vue-template/server": "workspace:*",
+    "@koa-vue-template/types": "workspace:*",
+    "@koa-vue-template/utils": "workspace:*"
+  }
+}

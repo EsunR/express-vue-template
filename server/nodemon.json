@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "./src"
+  ],
+  "exec": "ts-node -r tsconfig-paths/register",
+  "ext": "ts, js",
+  "env": {
+    "NODE_ENV": "development",
+    "NODE_PORT": 8093
+  }
+}
