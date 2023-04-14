@@ -4,7 +4,7 @@ import {
   POST_USER_CREATE_API,
   PickServerReq,
   PickServerRes,
-} from '@koa-vue-template/types/api';
+} from '@express-vue-template/types/api';
 import { AxiosResponse } from 'axios';
 
 export async function createUser(

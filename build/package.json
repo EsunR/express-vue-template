@@ -1,5 +1,5 @@
 {
-  "name": "@koa-vue-template/build",
+  "name": "@express-vue-template/build",
   "private": true,
   "description": "",
   "main": "index.js",

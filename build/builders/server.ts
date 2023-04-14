@@ -27,7 +27,7 @@ export async function buildServer() {
 
   const rollupOption: RollupOptions = {
     input: [
-      path.join(SERVER_DIR_PATH, 'src/server.ts'),
+      path.join(SERVER_DIR_PATH, 'src/index.ts'),
       path.join(SERVER_DIR_PATH, 'src/init_db.ts'),
     ],
     plugins: [

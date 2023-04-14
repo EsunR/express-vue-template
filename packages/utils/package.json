@@ -1,5 +1,5 @@
 {
-  "name": "@koa-vue-template/utils",
+  "name": "@express-vue-template/utils",
   "private": true,
   "description": "",
   "main": "index.ts",

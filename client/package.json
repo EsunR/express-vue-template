@@ -1,5 +1,5 @@
 {
-  "name": "@koa-vue-template/client",
+  "name": "@express-vue-template/client",
   "private": true,
   "version": "0.0.0",
   "scripts": {

@@ -1,9 +1,9 @@
-import { ResponseData } from '@koa-vue-template/types/api';
+import { ResponseData } from '@express-vue-template/types/api';
 import axios, { AxiosError } from 'axios';
 import { ElMessage } from 'element-plus';
 import qs from 'qs';
 
-const request = axios.create({ baseURL: '/api' });
+const request = axios.create({ baseURL: '/api', timeout: 10000 });
 
 request.interceptors.request.use((config) => {
   if (config.method === 'get') {

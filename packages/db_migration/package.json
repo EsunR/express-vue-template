@@ -1,5 +1,5 @@
 {
-  "name": "@koa-vue-template/db-migration",
+  "name": "@express-vue-template/db-migration",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

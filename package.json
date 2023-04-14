@@ -1,5 +1,5 @@
 {
-  "name": "koa-vue-template",
+  "name": "express-vue-template",
   "private": true,
   "description": "",
   "main": "index.js",
@@ -15,38 +15,38 @@
     "clean:node_modules": "find . -name \"node_modules\" -type d -exec rm -rf '{}' +"
   },
   "productScripts": {
-    "start": "cross-env NODE_ENV=production node ./server/src/server.js",
+    "start": "cross-env NODE_ENV=production node ./server/src/index.js",
     "db:init": "cross-env NODE_ENV=production node ./server/src/init_db.js",
     "db:migrate": "cross-env NODE_ENV=production sequelize-cli db:migrate"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zpangxie/koa-vue-template.git"
+    "url": "git+https://github.com/EsunR/express-vue-template.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Zpangxie/koa-vue-template/issues"
+    "url": "https://github.com/EsunR/express-vue-template/issues"
   },
-  "homepage": "https://github.com/Zpangxie/koa-vue-template#readme",
+  "homepage": "https://github.com/EsunR/express-vue-template#readme",
   "devDependencies": {
-    "@types/node": "^18.11.9",
-    "@typescript-eslint/eslint-plugin": "^5.14.0",
-    "@typescript-eslint/parser": "^5.14.0",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.11.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
-    "prettier": "^2.5.1",
-    "typescript": "^4.9.3"
+    "prettier": "^2.8.7",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@koa-vue-template/client": "workspace:^0.0.0",
-    "@koa-vue-template/server": "workspace:*",
-    "@koa-vue-template/types": "workspace:*",
-    "@koa-vue-template/utils": "workspace:*"
+    "@express-vue-template/client": "workspace:^0.0.0",
+    "@express-vue-template/server": "workspace:*",
+    "@express-vue-template/types": "workspace:*",
+    "@express-vue-template/utils": "workspace:*"
   },
   "lint-staged": {
     "*.{js,vue,ts}": "eslint --cache --fix",

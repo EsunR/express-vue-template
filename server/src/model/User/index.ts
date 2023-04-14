@@ -1,4 +1,4 @@
-import { UserInstance } from '@koa-vue-template/types/model';
+import { UserInstance } from '@express-vue-template/types/model';
 import db from '@server/db';
 import { DataTypes, Sequelize } from 'sequelize';
 

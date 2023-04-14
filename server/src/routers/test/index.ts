@@ -1,22 +1,20 @@
-import ResBody from '@server/struct/ResBody';
-import Router from 'koa-router';
 import {
   GET_TEST_ERROR_API,
   GET_TEST_SUCCESS_API,
-} from '@koa-vue-template/types/api';
+} from '@express-vue-template/types/api';
+import { Router } from 'express';
 
-const testRouter = new Router();
+const testRouter = Router();
 
-testRouter.get(GET_TEST_SUCCESS_API, async (ctx) => {
-  ctx.body = new ResBody({
+testRouter.get(GET_TEST_SUCCESS_API, async (req, res) => {
+  res.json({
     data: { time: new Date() },
   });
 });
 
-testRouter.get(GET_TEST_ERROR_API, async (ctx) => {
-  try {
-  } catch (error) {}
-  throw new Error('500-服务器接口错误测试');
+testRouter.get(GET_TEST_ERROR_API, async (req, res) => {
+  // express 5 开始，在 async 函数中抛出错误会被自动捕获，不需要再调用 next
+  new Error('500-服务器接口错误测试');
 });
 
 export default testRouter;

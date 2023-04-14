@@ -11,7 +11,7 @@ class Db {
   _connect() {
     const sequelize = new Sequelize({
       dialect: 'sqlite',
-      storage: path.join(DB_DIR_PATH, 'koa-vue-template.sqlite'),
+      storage: path.join(DB_DIR_PATH, 'express-vue-template.sqlite'),
     });
     return sequelize;
   }

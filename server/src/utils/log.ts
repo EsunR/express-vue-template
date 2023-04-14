@@ -17,6 +17,10 @@ log4js.configure({
       type: 'file',
       filename: path.resolve(LOG_DIR_PATH, 'db.log'),
     },
+    requestFile: {
+      type: 'file',
+      filename: path.resolve(LOG_DIR_PATH, 'request.log'),
+    },
   },
   categories: {
     default: {
@@ -27,11 +31,16 @@ log4js.configure({
       appenders: ['console', 'dbFile'],
       level: 'debug',
     },
+    request: {
+      appenders: ['console', 'requestFile'],
+      level: 'debug',
+    },
   },
 });
 
 export const logger = log4js.getLogger('default');
 export const dbLogger = log4js.getLogger('db');
+export const requestLogger = log4js.getLogger('request');
 
 /**
  * 解析日志内容
