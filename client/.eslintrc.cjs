@@ -7,8 +7,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
     '@vue/eslint-config-typescript',
-    'prettier',
+    'plugin:prettier/recommended',
     '.eslintrc-auto-import.json',
+    '../.eslintrc.common.cjs',
   ],
   rules: {
     'vue/multi-word-component-names': 'off',
@@ -20,9 +21,5 @@ module.exports = {
         ignores: [],
       },
     ],
-    // 必须使用分号
-    semi: ['error', 'always'],
-    // 必须使用单引号包裹字符串
-    quotes: ['error', 'single'],
   },
 };

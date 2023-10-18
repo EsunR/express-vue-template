@@ -3,8 +3,8 @@ import express from 'express';
 import { NODE_PORT } from './config';
 import { STATIC_DIR_PATH } from './config/paths';
 import dbGenerator from './db/db_generator';
-import errorHandler from './middle/error_handler';
-import requestHandler from './middle/request_handler';
+import errorHandler from './middleware/errorHandler';
+import requestHandler from './middleware/requestHandler';
 import testRouter from './routers/test';
 import userRouter from './routers/user';
 

@@ -5,6 +5,6 @@ declare module 'axios' {
     /**
      * 是否禁用错误提示
      */
-    silent?: boolean
+    silent?: boolean;
   }
 }

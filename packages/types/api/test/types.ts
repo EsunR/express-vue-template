@@ -1,4 +1,4 @@
-import { GET_TEST_ERROR_API, GET_TEST_SUCCESS_API } from ".";
+import { GET_TEST_ERROR_API, GET_TEST_SUCCESS_API } from '.';
 
 export interface ITestApi {
   [GET_TEST_SUCCESS_API]: {

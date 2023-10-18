@@ -26,7 +26,7 @@ export default {
     }
     return dayjs(time).format(type);
   },
-  
+
   formatRatio(num: number | string) {
     const formatNum = Number(num);
 

@@ -1,18 +1,5 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  extends: ['prettier'],
-  plugins: ['prettier', '@typescript-eslint'],
-  parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: 2015,
-  },
-  env: {
-    browser: true,
-  },
-  ignorePatterns: ['node_modules', 'output'],
   rules: {
-    // 启用 prettier
-    'prettier/prettier': 'error',
     // 禁止 for 循环出现方向错误的循环，比如 for (i = 0; i < 10; i--)
     'for-direction': 'error',
     // getter 必须有返回值，并且禁止返回空，比如 return;
@@ -52,5 +39,6 @@ module.exports = {
     semi: ['error', 'always'],
     // 必须使用单引号包裹字符串
     quotes: ['error', 'single'],
+    'no-trailing-spaces': 'error',
   },
 };

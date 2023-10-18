@@ -3,6 +3,13 @@
   "private": true,
   "description": "",
   "main": "index.js",
+  "packageManager": "pnpm@8.6.6",
+  "engines": {
+    "node": ">=16.13.0"
+  },
+  "volta": {
+    "node": "18.18.2"
+  },
   "scripts": {
     "prepare": "husky install",
     "dev:client": "pnpm -C client dev",
@@ -31,8 +38,8 @@
   "homepage": "https://github.com/EsunR/express-vue-template#readme",
   "devDependencies": {
     "@types/node": "^18.15.11",
-    "@typescript-eslint/eslint-plugin": "^5.58.0",
-    "@typescript-eslint/parser": "^5.58.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
@@ -40,7 +47,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
-    "typescript": "^4.9.5"
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@express-vue-template/client": "workspace:^0.0.0",
@@ -49,7 +56,9 @@
     "@express-vue-template/utils": "workspace:*"
   },
   "lint-staged": {
-    "*.{js,vue,ts}": "eslint --cache --fix",
-    "*.--write": "prettier --write"
+    "*.{vue,ts,js}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ]
   }
 }

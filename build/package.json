@@ -18,12 +18,12 @@
     "@rollup/plugin-json": "^5.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "del": "^6.0.0",
-    "esbuild": "^0.15.12",
+    "esbuild": "^0.19.5",
     "fast-glob": "^3.2.12",
     "gulp": "^4.0.2",
     "gulp-json-editor": "^2.5.6",
     "rollup": "^3.2.5",
-    "rollup-plugin-esbuild": "^4.10.1",
+    "rollup-plugin-esbuild": "^6.1.0",
     "ts-node": "^10.0.0"
   }
 }
