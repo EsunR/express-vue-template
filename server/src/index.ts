@@ -5,8 +5,7 @@ import { STATIC_DIR_PATH } from './config/paths';
 import dbGenerator from './db/db_generator';
 import errorHandler from './middleware/errorHandler';
 import requestHandler from './middleware/requestHandler';
-import testRouter from './routers/test';
-import userRouter from './routers/user';
+import mountRoutes from './routers';
 
 // const app: Koa = new Koa();
 const app = express();
@@ -27,9 +26,9 @@ app.use(cors());
 app.use(express.json());
 
 // Router
-app.use('/api', testRouter);
-app.use('/api', userRouter);
+mountRoutes(app);
 
+// 错误处理
 app.use(errorHandler());
 
 // Listen
