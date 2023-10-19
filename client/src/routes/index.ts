@@ -27,6 +27,15 @@ export const routes: RouteRecordRaw[] = [
       menuName: '创建用户',
     },
   },
+  // Websocket
+  {
+    path: '/websocket',
+    name: 'Websocket',
+    component: () => import('@client/views/websocket/index.vue'),
+    meta: {
+      menuName: 'Websocket',
+    },
+  },
 ];
 
 const router = createRouter({

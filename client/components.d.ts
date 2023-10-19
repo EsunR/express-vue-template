@@ -8,12 +8,14 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton'];
+    ElCol: typeof import('element-plus/es')['ElCol'];
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider'];
     ElForm: typeof import('element-plus/es')['ElForm'];
     ElFormItem: typeof import('element-plus/es')['ElFormItem'];
     ElInput: typeof import('element-plus/es')['ElInput'];
     ElMenu: typeof import('element-plus/es')['ElMenu'];
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
+    ElRow: typeof import('element-plus/es')['ElRow'];
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
     Header: typeof import('./src/components/Layout/Header.vue')['default'];
     Layout: typeof import('./src/components/Layout/index.vue')['default'];

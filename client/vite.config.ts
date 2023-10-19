@@ -36,6 +36,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': 'http://localhost:8093',
+      '/ws': 'ws://localhost:8093',
     },
   },
   css: {
