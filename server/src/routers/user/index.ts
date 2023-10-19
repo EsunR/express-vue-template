@@ -9,6 +9,7 @@ import {
 import userModel from '@server/model/User';
 import ResBody from '@server/struct/ResBody';
 import { hashPassword } from './controller';
+import { messageWs } from '@server/instance/ws';
 
 const userRouter = Router();
 
@@ -37,6 +38,8 @@ userRouter.post(POST_USER_CREATE_API, async (req, res, next) => {
     name,
     password: hashPassword(password),
   });
+
+  messageWs.emit('broadcast message', `${name} 用户被创建了！`);
 
   res.json(
     new ResBody({

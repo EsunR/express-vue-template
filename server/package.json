@@ -19,6 +19,7 @@
     "lodash-es": "^4.17.21",
     "log4js": "^6.9.1",
     "sequelize": "^6.19.0",
+    "socket.io": "^4.7.2",
     "sqlite3": "^5.1.1"
   },
   "devDependencies": {

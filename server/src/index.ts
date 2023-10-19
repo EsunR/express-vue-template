@@ -1,14 +1,17 @@
 import cors from 'cors';
 import express from 'express';
+import { createServer } from 'http';
 import { NODE_PORT } from './config';
 import { STATIC_DIR_PATH } from './config/paths';
 import dbGenerator from './db/db_generator';
+import { createIO } from './instance/ws';
 import errorHandler from './middleware/errorHandler';
 import requestHandler from './middleware/requestHandler';
-import mountRoutes from './routers';
+import { mountRoutes, mountWsRoutes } from './routers';
 
-// const app: Koa = new Koa();
 const app = express();
+const server = createServer(app);
+const io = createIO(server);
 
 // 需要数据库连接可选择接触该行注释
 dbGenerator();
@@ -26,11 +29,13 @@ app.use(cors());
 app.use(express.json());
 
 // Router
+mountWsRoutes();
 mountRoutes(app);
 
 // 错误处理
 app.use(errorHandler());
 
 // Listen
-app.listen(NODE_PORT);
-console.log(`serve running on port ${NODE_PORT}`);
+server.listen(NODE_PORT, () => {
+  console.log(`serve running on port ${NODE_PORT}`);
+});
