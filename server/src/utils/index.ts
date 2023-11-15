@@ -1,3 +1,6 @@
+import fs from 'fs';
+import childProcess, { ExecOptions } from 'child_process';
+
 type VerifyResult = {
   result: boolean;
   errMsg: string;
@@ -64,4 +67,32 @@ export function verifyRequestArgs(
   });
 
   return result;
+}
+
+/**
+ * 执行 shell 命令
+ */
+export async function carryShell(sh: string, option: ExecOptions = {}) {
+  return new Promise((resolve, reject) => {
+    childProcess.exec(sh, option, (err, stdout, stderr) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(stdout);
+    });
+  });
+}
+
+/**
+ * 检查是否有对应的文件夹，如果没有则创建对应的路径
+ */
+export function checkDirExist(dirPath: string) {
+  const pathArr = dirPath.split('/');
+  pathArr.reduce((prev, next) => {
+    const currentPath = `${prev}/${next}`;
+    if (!fs.existsSync(currentPath)) {
+      fs.mkdirSync(currentPath);
+    }
+    return currentPath;
+  });
 }

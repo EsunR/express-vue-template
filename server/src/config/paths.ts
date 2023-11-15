@@ -7,3 +7,4 @@ export const PUBLIC_DIR_PATH = path.join(PACKAGE_ROOT_PATH, 'public');
 export const DB_DIR_PATH = path.join(PUBLIC_DIR_PATH, 'database');
 export const REPORTS_DIR_PATH = path.join(PUBLIC_DIR_PATH, 'reports');
 export const LOG_DIR_PATH = path.join(PUBLIC_DIR_PATH, 'log');
+export const BIN_DIR_PATH = path.join(PACKAGE_ROOT_PATH, 'bin');

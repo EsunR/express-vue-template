@@ -8,6 +8,8 @@ import { createIO } from './instance/ws';
 import errorHandler from './middleware/errorHandler';
 import requestHandler from './middleware/requestHandler';
 import { mountRoutes, mountWsRoutes } from './routers';
+import bodyParser from 'body-parser';
+import fileUpload from 'express-fileupload';
 
 const app = express();
 const server = createServer(app);
@@ -21,6 +23,10 @@ app.use(requestHandler());
 
 // 静态文件服务
 app.use(express.static(STATIC_DIR_PATH));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(fileUpload());
 
 // CORS
 app.use(cors());

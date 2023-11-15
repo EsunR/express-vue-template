@@ -36,6 +36,15 @@ export const routes: RouteRecordRaw[] = [
       menuName: 'Websocket',
     },
   },
+  // Krpano
+  {
+    path: '/krpano/upload',
+    name: 'KrpanoUpload',
+    component: () => import('@client/views/krpano/upload/index.vue'),
+    meta: {
+      belong: 'Krpano',
+    },
+  },
 ];
 
 const router = createRouter({

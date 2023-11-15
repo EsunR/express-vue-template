@@ -17,9 +17,11 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem'];
     ElRow: typeof import('element-plus/es')['ElRow'];
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu'];
+    ElUpload: typeof import('element-plus/es')['ElUpload'];
     Header: typeof import('./src/components/Layout/Header.vue')['default'];
     Layout: typeof import('./src/components/Layout/index.vue')['default'];
     Menu: typeof import('./src/components/Layout/Menu.vue')['default'];
+    PanoViewer: typeof import('./src/components/PanoViewer/index.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];
   }

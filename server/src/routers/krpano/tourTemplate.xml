@@ -1,0 +1,11 @@
+<krpano version="1.21" title="Virtual Tour" debugmode="true" logkey="true">
+  <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+    fovmax="140" limitview="auto" />
+
+  <preview url="/krpano/assets/[PANOID]/preview.jpg" />
+
+  <image>
+    <cube url="/krpano/assets/[PANOID]/%s/l%l/%v/l%l_%s_%v_%h.jpg"
+      multires="512,512,1024,1792" />
+  </image>
+</krpano>

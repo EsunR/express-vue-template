@@ -21,6 +21,10 @@ log4js.configure({
       type: 'file',
       filename: path.resolve(LOG_DIR_PATH, 'request.log'),
     },
+    krpanoFile: {
+      type: 'file',
+      filename: path.resolve(LOG_DIR_PATH, 'krpano.log'),
+    },
   },
   categories: {
     default: {
@@ -35,12 +39,17 @@ log4js.configure({
       appenders: ['console', 'requestFile'],
       level: 'debug',
     },
+    krpano: {
+      appenders: ['console', 'krpanoFile'],
+      level: 'debug',
+    },
   },
 });
 
 export const logger = log4js.getLogger('default');
 export const dbLogger = log4js.getLogger('db');
 export const requestLogger = log4js.getLogger('request');
+export const krpanoLogger = log4js.getLogger('krpano');
 
 /**
  * 解析日志内容
