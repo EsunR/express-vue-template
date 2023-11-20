@@ -39,6 +39,7 @@ export default defineConfig({
       '/krpano': 'http://localhost:8093',
       '/ws': 'ws://localhost:8093',
     },
+    host: '0.0.0.0',
   },
   css: {
     preprocessorOptions: {

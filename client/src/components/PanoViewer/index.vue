@@ -6,8 +6,15 @@ defineOptions({
 const props = withDefaults(
   defineProps<{
     xml: string;
+    embeddingParameters?: {
+      xml?: string;
+      initvars?: Record<string, any>;
+      basepath?: string;
+    };
   }>(),
-  {}
+  {
+    embeddingParameters: () => ({}),
+  }
 );
 
 const panoContainerRef = ref<HTMLDivElement>();
@@ -18,7 +25,7 @@ const loadPanoScript = () => {
   return new Promise((resolve, reject) => {
     const isPanoScriptExist = typeof embedpano === 'function';
     if (isPanoScriptExist) {
-      return;
+      resolve(void 0);
     }
     loadStatus.value = 'loading';
     const script = document.createElement('script');
@@ -43,6 +50,7 @@ const initPano = async () => {
     onready: (pano: any) => {
       panoInstance.value = pano;
     },
+    ...(props.embeddingParameters || {}),
   });
 };
 
@@ -67,6 +75,10 @@ watch(
     immediate: true,
   }
 );
+
+defineExpose({
+  panoInstance,
+});
 </script>
 
 <template>

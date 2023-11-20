@@ -45,6 +45,14 @@ export const routes: RouteRecordRaw[] = [
       belong: 'Krpano',
     },
   },
+  {
+    path: '/krpano/editor',
+    name: 'KrpanoEditor',
+    component: () => import('@client/views/krpano/editor/index.vue'),
+    meta: {
+      belong: 'Krpano',
+    },
+  },
 ];
 
 const router = createRouter({
