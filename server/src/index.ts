@@ -10,6 +10,7 @@ import requestHandler from './middleware/requestHandler';
 import { mountRoutes, mountWsRoutes } from './routers';
 import bodyParser from 'body-parser';
 import fileUpload from 'express-fileupload';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 const server = createServer(app);
@@ -33,6 +34,9 @@ app.use(cors());
 
 // 解析 HTTP Body
 app.use(express.json());
+
+// 解析 cookie
+app.use(cookieParser());
 
 // Router
 mountWsRoutes();
