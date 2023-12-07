@@ -6,6 +6,7 @@ import dbGenerator from './db/db_generator';
 import errorHandler from './middleware/errorHandler';
 import requestHandler from './middleware/requestHandler';
 import mountRoutes from './routers';
+import cookieParser from 'cookie-parser';
 
 // const app: Koa = new Koa();
 const app = express();
@@ -24,6 +25,9 @@ app.use(cors());
 
 // 解析 HTTP Body
 app.use(express.json());
+
+// 解析 cookie
+app.use(cookieParser());
 
 // Router
 mountRoutes(app);
