@@ -131,3 +131,5 @@ dist
 .DS_Store
 
 output
+auto-imports.d.ts
+components.d.ts

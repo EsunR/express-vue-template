@@ -140,6 +140,9 @@ importers:
       '@types/lodash-es':
         specifier: ^4.17.9
         version: 4.17.9
+      '@types/qs':
+        specifier: ^6.9.10
+        version: 6.9.10
       '@vitejs/plugin-vue':
         specifier: ^4.4.0
         version: 4.4.0(vite@4.4.11)(vue@3.3.4)
@@ -1102,6 +1105,10 @@ packages:
 
   /@types/picomatch@2.3.1:
     resolution: {integrity: sha512-Ejq9/KBsgfZZafGGdr9R7011EZhDzcAEMjoBl2W4eGNcZGhsUFMbUA0D+sHxjtAA1ldk3e6wapzXeyp0NSuM8Q==}
+    dev: true
+
+  /@types/qs@6.9.10:
+    resolution: {integrity: sha512-3Gnx08Ns1sEoCrWssEgTSJs/rsT2vhGP+Ja9cnnk9k4ALxinORlQneLXFeFKOTJMOeZUFD1s7w+w2AphTpvzZw==}
     dev: true
 
   /@types/qs@6.9.8:
