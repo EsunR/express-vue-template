@@ -11,15 +11,19 @@ defineOptions({
 const fileList = ref<UploadUserFile[]>([]);
 const uploadedPanoId = ref<string>('');
 const xmlData = ref<string>('');
+const panoType = ref<'sphere' | 'flat' | 'cylinder'>('sphere');
 
 const handleSuccess: UploadProps['onSuccess'] = (res) => {
-  const { panoId } = res?.data || {};
-  uploadedPanoId.value = panoId;
+  const resData = res?.data || {};
+  uploadedPanoId.value = resData.panoId;
+  panoType.value = resData.panoType;
 };
 
 const fetchXML = async () => {
   try {
-    const res = await axios.get(`/api/krpano/xml/${uploadedPanoId.value}`);
+    const res = await axios.get(`/api/krpano/xml/${uploadedPanoId.value}`, {
+      params: { panoType: panoType.value },
+    });
     xmlData.value = res.data;
   } catch (e) {
     const resData = (e as AxiosError).response?.data as any;
@@ -49,6 +53,13 @@ const fetchXML = async () => {
     <div class="card-area">
       <h1 class="card-title">Preview</h1>
       <el-input v-model="uploadedPanoId" class="mb-4" placeholder="PanoId" />
+      <div>
+        <el-radio-group v-model="panoType">
+          <el-radio label="sphere">Sphere</el-radio>
+          <el-radio label="flat">Flat</el-radio>
+          <el-radio label="cylinder">Cylinder</el-radio>
+        </el-radio-group>
+      </div>
       <el-button
         class="mb-4"
         :disabled="!uploadedPanoId.trim()"
