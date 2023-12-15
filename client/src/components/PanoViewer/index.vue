@@ -3,6 +3,8 @@ defineOptions({
   name: 'PanoViewer',
 });
 
+const emit = defineEmits(['ready']);
+
 const props = withDefaults(
   defineProps<{
     xml: string;
@@ -49,6 +51,7 @@ const initPano = async () => {
     target: panoContainerRef.value,
     onready: (pano: any) => {
       panoInstance.value = pano;
+      emit('ready', pano);
     },
     ...(props.embeddingParameters || {}),
   });

@@ -3,33 +3,44 @@ import axios from 'axios';
 import { AxiosError } from 'axios';
 import { UploadUserFile, UploadProps, ElMessage } from 'element-plus';
 import PanoViewer from '@client/components/PanoViewer/index.vue';
+import { useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 defineOptions({
   name: 'KrpanoUploadPage',
 });
 
+const route = useRoute();
+const router = useRouter();
 const fileList = ref<UploadUserFile[]>([]);
-const uploadedPanoId = ref<string>('');
+const uploadedPanoId = ref<string>((route.query.panoId || '') as string);
 const xmlData = ref<string>('');
-const panoType = ref<'sphere' | 'flat' | 'cylinder'>('sphere');
 
 const handleSuccess: UploadProps['onSuccess'] = (res) => {
   const resData = res?.data || {};
   uploadedPanoId.value = resData.panoId;
-  panoType.value = resData.panoType;
+  router.push({
+    query: {
+      panoId: resData.panoId,
+    },
+  });
 };
 
 const fetchXML = async () => {
   try {
-    const res = await axios.get(`/api/krpano/xml/${uploadedPanoId.value}`, {
-      params: { panoType: panoType.value },
-    });
+    const res = await axios.get(`/api/krpano/xml/${uploadedPanoId.value}`);
     xmlData.value = res.data;
   } catch (e) {
     const resData = (e as AxiosError).response?.data as any;
     if (resData.msg) {
       ElMessage.error(resData.msg);
     }
+  }
+};
+
+const onPanoReady = () => {
+  if (uploadedPanoId.value) {
+    fetchXML();
   }
 };
 </script>
@@ -53,13 +64,6 @@ const fetchXML = async () => {
     <div class="card-area">
       <h1 class="card-title">Preview</h1>
       <el-input v-model="uploadedPanoId" class="mb-4" placeholder="PanoId" />
-      <div>
-        <el-radio-group v-model="panoType">
-          <el-radio label="sphere">Sphere</el-radio>
-          <el-radio label="flat">Flat</el-radio>
-          <el-radio label="cylinder">Cylinder</el-radio>
-        </el-radio-group>
-      </div>
       <el-button
         class="mb-4"
         :disabled="!uploadedPanoId.trim()"
@@ -67,7 +71,7 @@ const fetchXML = async () => {
         @click="fetchXML"
         >获取 XML</el-button
       >
-      <pano-viewer :xml="xmlData" />
+      <pano-viewer :xml="xmlData" @ready="onPanoReady" />
     </div>
   </div>
 </template>
