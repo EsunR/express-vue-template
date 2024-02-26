@@ -114,18 +114,6 @@ const generatePdfByHtml = () => {
   font-family: 'SourceHanSansCN-VF';
   src: url('../../../assets/fonts/SourceHanSansCN-VF.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'SourceHanSansHK-VF';
-  src: url('../../../assets/fonts/SourceHanSansHK-VF.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'SourceHanSansTW-VF';
-  src: url('../../../assets/fonts/SourceHanSansTW-VF.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'SourceHanSansJP-VF';
-  src: url('../../../assets/fonts/SourceHanSansJP-VF.ttf') format('truetype');
-}
 .render-content {
   font-family: 'SourceHanSansCN-VF';
 }
