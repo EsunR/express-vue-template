@@ -53,6 +53,52 @@ export const routes: RouteRecordRaw[] = [
       belong: 'Krpano',
     },
   },
+  // 海报生成
+  {
+    path: '/poster/generate',
+    name: 'PosterGenerate',
+    component: () => import('@client/views/poster/generate/index.vue'),
+    meta: {
+      belong: '海报生成',
+      menuName: '生成',
+    },
+  },
+  {
+    path: '/poster/generate/subPage',
+    name: 'PosterGenerateSubPage',
+    component: () => import('@client/views/poster/generate/subPage.vue'),
+    meta: {
+      hide: true,
+      purePage: true,
+    },
+  },
+  {
+    path: '/poster/iframeMessage',
+    name: 'PosterIframeMessage',
+    component: () => import('@client/views/poster/iframeMessage/index.vue'),
+    meta: {
+      belong: '海报生成',
+      menuName: 'iframe 通信测试',
+    },
+  },
+  {
+    path: '/poster/iframeMessage/subPage',
+    name: 'PosterIframeMessageSubPage',
+    component: () => import('@client/views/poster/iframeMessage/subPage.vue'),
+    meta: {
+      hide: true,
+      purePage: true,
+    },
+  },
+  {
+    path: '/poster/pdfRender',
+    name: 'PosterPdfRender',
+    component: () => import('@client/views/poster/pdfRender/index.vue'),
+    meta: {
+      belong: '海报生成',
+      menuName: '渲染 PDF',
+    },
+  },
 ];
 
 const router = createRouter({

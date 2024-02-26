@@ -5,5 +5,7 @@ declare module 'vue-router' {
     hide?: boolean;
     menuName?: string;
     belong?: string;
+    // 是否是纯页面，不需要菜单
+    purePage?: boolean;
   }
 }

@@ -40,6 +40,9 @@ export default defineConfig({
       '/ws': 'ws://localhost:8093',
     },
     host: '0.0.0.0',
+    watch: {
+      ignored: ['SourceHanSans-Regular-normal.js'],
+    },
   },
   css: {
     preprocessorOptions: {

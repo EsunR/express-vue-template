@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-col h-100vh">
+  <div v-if="isPurePage">
+    <slot></slot>
+  </div>
+  <div v-else class="flex flex-col h-100vh">
     <layout-header />
     <div class="flex flex-1 overflow-hidden">
       <layout-menu />
@@ -14,6 +17,7 @@
 import { defineComponent } from 'vue';
 import LayoutHeader from './Header.vue';
 import LayoutMenu from './Menu.vue';
+import { useRoute } from 'vue-router';
 
 export default defineComponent({
   name: 'Layout',
@@ -22,7 +26,15 @@ export default defineComponent({
     LayoutMenu,
   },
   setup() {
-    return {};
+    const route = useRoute();
+
+    const isPurePage = computed(() => {
+      return route.meta.purePage;
+    });
+
+    return {
+      isPurePage,
+    };
   },
 });
 </script>
