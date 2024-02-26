@@ -22,7 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-.eslintrc-auto-import.json
-auto-imports.d.ts
-components.d.ts
