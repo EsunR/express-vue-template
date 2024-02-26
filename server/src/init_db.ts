@@ -4,6 +4,7 @@ import { globSync } from 'glob';
 import path from 'path';
 import { env } from 'process';
 import { dbLogger } from './utils/log';
+import fs from 'fs';
 
 dbGenerator().then(async () => {
   const isNewDb = await db.checkIsNew();
@@ -12,6 +13,9 @@ dbGenerator().then(async () => {
       env.NODE_ENV === 'production'
         ? require(path.join(__dirname, '../../.sequelizerc'))['migrations-path']
         : path.join(__dirname, '../../packages/db_migration/migrations');
+    if (!fs.existsSync(migrationsPath)) {
+      fs.mkdirSync(migrationsPath);
+    }
     const migrationFileNames = globSync(`${migrationsPath}/*.js`).map(
       (filePath) => filePath.split('/').pop()
     );
