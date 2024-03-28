@@ -99,6 +99,15 @@ export const routes: RouteRecordRaw[] = [
       menuName: '渲染 PDF',
     },
   },
+  {
+    path: '/poster/html2canvasCORS',
+    name: 'PosterHtml2canvasCORS',
+    component: () => import('@client/views/poster/html2canvasCORS/index.vue'),
+    meta: {
+      belong: '海报生成',
+      menuName: 'html2canvas 图片跨域',
+    },
+  },
 ];
 
 const router = createRouter({
