@@ -1,6 +1,6 @@
 <template>
   <div class="home-page card-area">
-    <h1 class="mb-4">Welcome !</h1>
+    <h1 class="text-3xl mb-4">Welcome !</h1>
     <el-button type="success" @click="onSuccessBtnClick"
       >测试服务器正常</el-button
     >

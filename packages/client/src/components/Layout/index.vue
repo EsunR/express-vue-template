@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col h-100vh">
+  <div class="layout flex flex-col h-[100vh]">
     <layout-header />
     <div class="flex flex-1 overflow-hidden">
       <layout-menu />
-      <div class="p-5 flex-1 overflow-y-auto bg-light-600">
+      <div class="p-5 flex-1 overflow-y-auto bg-gray-100">
         <slot></slot>
       </div>
     </div>

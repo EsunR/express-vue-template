@@ -8,17 +8,17 @@
     "node": ">=16.13.0"
   },
   "volta": {
-    "node": "18.18.2"
+    "node": "22.17.0"
   },
   "scripts": {
     "prepare": "husky install",
-    "dev:client": "pnpm -C client dev",
-    "dev:server": "pnpm -C server dev",
+    "dev:client": "pnpm -C packages/client dev",
+    "dev:server": "pnpm -C packages/server dev",
     "dev:server-force": "cross-env DB_FORCE=TRUE pnpm -C server dev",
-    "build:client": "pnpm -C client build",
-    "build": "pnpm -C build build",
+    "build:client": "pnpm -C packages/client build",
+    "build": "pnpm -C packages/build build",
     "db:migrate:dev": "pnpm -C packages/db_migration migrate:dev",
-    "db:init:dev": "pnpm -C server db:init:dev",
+    "db:init:dev": "pnpm -C packages/server db:init:dev",
     "clean:node_modules": "find . -name \"node_modules\" -type d -exec rm -rf '{}' +"
   },
   "productScripts": {
@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/EsunR/express-vue-template#readme",
   "devDependencies": {
-    "@types/node": "^18.15.11",
+    "@types/node": "^22.13.14",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "cross-env": "^7.0.3",

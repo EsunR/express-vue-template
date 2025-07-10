@@ -9,7 +9,7 @@ module.exports = {
     '@vue/eslint-config-typescript',
     'plugin:prettier/recommended',
     '.eslintrc-auto-import.json',
-    '../.eslintrc.common.cjs',
+    '../../.eslintrc.common.cjs',
   ],
   rules: {
     'vue/multi-word-component-names': 'off',
